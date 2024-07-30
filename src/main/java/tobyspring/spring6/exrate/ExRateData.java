@@ -1,4 +1,4 @@
-package tobyspring.spring6;
+package tobyspring.spring6.exrate;
 
 import java.math.BigDecimal;
 import java.util.Map;

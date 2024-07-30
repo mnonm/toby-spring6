@@ -6,6 +6,9 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import tobyspring.spring6.payment.Payment;
+import tobyspring.spring6.payment.PaymentService;
+
 public class Client {
 	public static void main(String[] args) throws IOException {
 		BeanFactory beanFactory = new AnnotationConfigApplicationContext(ObjectFactory.class);

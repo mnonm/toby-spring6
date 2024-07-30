@@ -1,4 +1,4 @@
-package tobyspring.spring6;
+package tobyspring.spring6.payment;
 
 import java.io.IOException;
 import java.math.BigDecimal;

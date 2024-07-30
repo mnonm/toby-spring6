@@ -1,4 +1,4 @@
-package tobyspring.spring6;
+package tobyspring.spring6.exrate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import tobyspring.spring6.payment.ExRateProvider;
 
 @Component
 public class WebApiExRateProvider implements ExRateProvider {
