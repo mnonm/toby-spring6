@@ -6,13 +6,11 @@ import static org.assertj.core.api.Assertions.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class PaymentServiceTest {
 
 	@Test
-	@DisplayName("prepare 메소드가 요구사항 3가지를 잘 충족했는지 검증")
 	void convertedAmount() throws IOException {
 		testAmount(valueOf(500), valueOf(5_000));
 		testAmount(valueOf(1_000), valueOf(10_000));
