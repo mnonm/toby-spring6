@@ -19,10 +19,10 @@ public class WebApiExRateProvider implements ExRateProvider {
 	public BigDecimal getExRate(String currency) {
 		String url = "https://open.er-api.com/v6/latest/" + currency;
 
-		return runApiForExRate(url);
+		return runApiForExRate(url, new SimpleApiExecutor());
 	}
 
-	private static BigDecimal runApiForExRate(String url) {
+	private static BigDecimal runApiForExRate(String url, SimpleApiExecutor apiExecutor) {
 		URI uri;
 		try {
 			uri = new URI(url);
@@ -32,7 +32,7 @@ public class WebApiExRateProvider implements ExRateProvider {
 
 		String response;
 		try {
-			response = new SimpleApiExecutor().execute(uri);
+			response = apiExecutor.execute(uri);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
