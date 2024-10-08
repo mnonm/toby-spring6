@@ -5,6 +5,7 @@ import java.time.Clock;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import tobyspring.spring6.api.ApiTemplate;
 import tobyspring.spring6.exrate.CachedExRateProvider;
 import tobyspring.spring6.payment.ExRateProvider;
 import tobyspring.spring6.exrate.WebApiExRateProvider;
@@ -23,8 +24,13 @@ public class PaymentConfig {
 	}
 
 	@Bean
+	public ApiTemplate apiTemplate() {
+		return new ApiTemplate();
+	}
+
+	@Bean
 	public ExRateProvider exRateProvider() {
-		return new WebApiExRateProvider();
+		return new WebApiExRateProvider(apiTemplate());
 	}
 
 	@Bean
