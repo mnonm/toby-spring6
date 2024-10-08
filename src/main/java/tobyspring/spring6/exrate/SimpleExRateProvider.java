@@ -1,6 +1,5 @@
 package tobyspring.spring6.exrate;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 
 import tobyspring.spring6.payment.ExRateProvider;
