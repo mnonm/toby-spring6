@@ -14,7 +14,6 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import jakarta.persistence.EntityManagerFactory;
-import tobyspring.spring6.data.OrderRepository;
 
 @Configuration
 public class DataConfig {
@@ -46,10 +45,5 @@ public class DataConfig {
 	@Bean
 	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
-	}
-
-	@Bean
-	public OrderRepository orderRepository() {
-		return new OrderRepository();
 	}
 }
