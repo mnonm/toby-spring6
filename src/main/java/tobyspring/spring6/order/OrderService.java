@@ -1,6 +1,7 @@
 package tobyspring.spring6.order;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -20,9 +21,13 @@ public class OrderService {
 	public Order createOrder(String no, BigDecimal total) {
 		Order order = new Order(no, total);
 
-		return new TransactionTemplate(transactionManager).execute(status -> {
-			orderRepository.save(order);
-			return order;
-		});
+		orderRepository.save(order);
+		return order;
+	}
+
+	public List<Order> createOrders(List<OrderReq> reqs) {
+		return new TransactionTemplate(transactionManager).execute(status -> reqs.stream()
+			.map(req -> createOrder(req.no(), req.total()))
+			.toList());
 	}
 }
